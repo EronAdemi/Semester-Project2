@@ -1,5 +1,8 @@
 # AuctioLooms - Weave Your Winning Bid
 
+![Skjermbilde 2023-12-17 232013](https://github.com/EronAdemi/Semester-Project2/assets/111318711/c4aad966-0d28-4746-b615-8bfa03974d35)
+
+
 ## Description
 
 AuctioLoom is a Auction site where you can post auctions and bid on items. When you create an account you are given 1000$ you can bid with.
