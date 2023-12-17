@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="font-sans w-full flex justify-center">
+      <div class="w-full bg-[#3B3C50]">
+        <nav class="bg-[#C0C3FF] shadow-lg text-2xl px-2">
+          <div class="max-w-[110rem] mx-auto px-1">
+            <div class="flex justify-between">
+              <div class="flex space-x-7">
+                <!-- Logo -->
+                <div>
+                  <!-- Website Logo -->
+                  <a href="#" class="flex items-center py-4 px-2">
+                    <img
+                      src="./assets/logo.png"
+                      alt="Logo"
+                      class="w-80 translate-y-2 mr-2"
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- Primary Navbar items -->
+              <div class="hidden md:flex items-center gap-20">
+                <a
+                  href="index.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Home</a
+                >
+                <a
+                  href="allProducts.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Auctions</a
+                >
+                <a
+                  id="profile"
+                  href="profile.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Profile</a
+                >
+              </div>
+              <!-- Secondary Navbar items -->
+              <div class="flex items-center space-x-3">
+                <a id="logout" class="text-md cursor-pointer">Logout</a>
+                <a href="login.html" id="login" class="text-md">Login</a>
+              </div>
+              <!-- Mobile menu button -->
+              <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                  <svg
+                    class="w-6 h-6 text-gray-500 hover:text-black"
+                    x-show="!showMenu"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- mobile menu -->
+          <div class="hidden mobile-menu">
+            <ul class="text-black pb-4">
+              <li class="hover:bg-white mb-4">
+                <a
+                  href="index.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Home</a
+                >
+              </li>
+              <li class="hover:bg-white mb-4">
+                <a
+                  href="allProducts.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Auctions</a
+                >
+              </li>
+              <li class="hover:bg-white mb-4">
+                <a
+                  href="profile.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300 pb-4"
+                  >Profile</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main>
+          <section
+            class="flex flex-col items-center m-auto w-full mt-10"
+            id="product-details"
+          >
+            <div id="details-container"></div>
+          </section>
+          <section class="w-full flex justify-between py-10 px-10">
+            <div
+              class="left-card flex flex-col justify-between w-7/12 bg-[#C0C3FF] h-52 py-4 rounded-md px-12"
+            >
+              <div class="card-header font-bold text-2xl flex justify-between">
+                <p>current price</p>
+                <p class="text-green-600">
+                  US $<span id="current-price"></span>
+                </p>
+              </div>
+              <div class="">
+                <input
+                  id="bidAmount"
+                  class="border-gray-500 bg-[#C0C3FF] rounded-lg w-8/12 border-2 m-auto h-12 font-bold text-2xl mb-3 pl-3 relative"
+                  placeholder="Enter Your Bid Amount"
+                />
+                <button
+                  id="submit"
+                  class="bg-gray-500 px-5 h-12 text-white rounded-md font-bold text-xl"
+                >
+                  Submit Bid
+                </button>
+              </div>
+            </div>
+            <div
+              class="right-card font-bold text-2xl flex flex-col items-center w-4/12 bg-[#C0C3FF] h-28 py-4 rounded-md px-4"
+            >
+              <p>This Auction Ends in :</p>
+              <p class="text-red-800" id="endsIn">00.00</p>
+            </div>
+          </section>
+
+          <section id="table" class="container mx-auto p-4 bg-[#C0C3FF] mb-10">
+            <div
+              class="grid grid-cols-4 gap-4p-2 text-center font-bold border-b border-black pb-3"
+            >
+              <div>Bidder</div>
+              <div>Date</div>
+              <div>Time</div>
+              <div>Amount</div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="pt-10 pb-20 bg-[#C0C3FF]">
+          <div class="lg:flex justify-between pl-16">
+            <div
+              class="left-container flex flex-col gap-y-10 text-xl font-semibold mb-10 lg:mb-0"
+            >
+              <a href="/src/index.html">Home</a>
+              <a href="/src/recent.html">Recent Posts</a>
+              <a href="/src/contact.html">Contact</a>
+            </div>
+            <div class="right-container flex flex-col items-center">
+              <img src="assets/logo.png" alt="" />
+              <div class="flex gap-x-10 font-semibold">
+                <a href="register.html">Sign up</a>
+                <a
+                  href="login.html"
+                  class="bg-[#3B3C50] px-14 py-2 text-white rounded-md"
+                >
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script>
+    const btn = document.querySelector("button.mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+  <script src="productDetails.js"></script>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Auctions</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="font-sans w-full flex justify-center">
+      <div class="w-full bg-[#3B3C50]">
+        <nav class="bg-[#C0C3FF] shadow-lg text-2xl px-2">
+          <div class="max-w-[110rem] mx-auto px-1">
+            <div class="flex justify-between">
+              <div class="flex space-x-7">
+                <!-- Logo -->
+                <div>
+                  <!-- Website Logo -->
+                  <a href="#" class="flex items-center py-4 px-2">
+                    <img
+                      src="./assets/logo.png"
+                      alt="Logo"
+                      class="w-80 translate-y-2 mr-2"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Primary Navbar items -->
+              <div class="hidden md:flex items-center gap-20">
+                <a
+                  href="index.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Home</a
+                >
+                <a
+                  href="allProducts.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Auctions</a
+                >
+                <a
+                  id="profile"
+                  href="profile.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Profile</a
+                >
+              </div>
+              <!-- Secondary Navbar items -->
+              <div class="flex items-center space-x-3">
+                <a id="logout" class="text-md cursor-pointer">Logout</a>
+                <a href="login.html" id="login" class="text-md">Login</a>
+              </div>
+              <!-- Mobile menu button -->
+              <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                  <svg
+                    class="w-6 h-6 text-gray-500 hover:text-black"
+                    x-show="!showMenu"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- mobile menu -->
+          <div class="hidden mobile-menu">
+            <ul class="text-black pb-4">
+              <li class="active hover:bg-white mb-4">
+                <a
+                  href="index.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                  >Home</a
+                >
+              </li>
+
+              <li class="hover:bg-white mb-4">
+                <a
+                  href="profile.html"
+                  class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300 pb-4"
+                  >Profile</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main>
+          <img src="./assets/image 2.png" alt="" />
+          <div
+            class="w-full px-8 flex justify-between items-center py-7 flex-wrap"
+          >
+            <p class="text-white font-semibold text-xl">
+              AuctionLooms Auctions
+            </p>
+
+            <button
+              class="w-52 text-center text-xl bg-[#C0C3FF] rounded-md pt-2 pb-2"
+            >
+              <p id="new-auction">LIST NEW AUCTION</p>
+            </button>
+            <button
+              class="w-44 px-6 py-1 bg-[#C0C3FF] rounded-xl mt-5 md:mt-0"
+              id="sortButton"
+            >
+              Newest
+            </button>
+          </div>
+          <div class="w-full flex justify-center">
+            <div
+              class="left-card flex flex-col justify-between w-7/12 bg-[#C0C3FF] py-4 rounded-md px-12"
+            >
+              <div class="w-full flex flex-col md:flex-row flex-wrap">
+                <input
+                  id="searchBar"
+                  class="border-gray-500 bg-[#C0C3FF] rounded-lg w-full md:w-8/12 border-2 m-auto h-12 font-bold text-2xl mb-3 pl-3 relative"
+                  placeholder="Search"
+                />
+                <button
+                  id="submitSearch"
+                  class="bg-gray-500 px-5 h-12 text-white rounded-md font-bold text-xl"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+          <section class="mt-10">
+            <div
+              id="auctionListings"
+              class="flex w-full justify-center gap-8 mb-8 flex-wrap"
+            ></div>
+          </section>
+          <div class="w-full flex justify-center">
+            <button
+              class="bg-[#C0C3FF] py-1 px-44 rounded-xl mb-32"
+              id="showMoreButton"
+            >
+              Show more
+            </button>
+          </div>
+        </main>
+        <footer class="pt-10 pb-20 bg-[#C0C3FF]">
+          <div class="lg:flex justify-between pl-16">
+            <div
+              class="left-container flex flex-col gap-y-10 text-xl font-semibold mb-10 lg:mb-0"
+            >
+              <a href="/src/index.html">Home</a>
+              <a href="/src/recent.html">Recent Posts</a>
+              <a href="/src/contact.html">Contact</a>
+            </div>
+            <div class="right-container flex flex-col items-center">
+              <img src="assets/logo.png" alt="" />
+              <div class="flex gap-x-10 font-semibold">
+                <a href="register.html">Sign up</a>
+                <a
+                  href="login.html"
+                  class="bg-[#3B3C50] px-14 py-2 text-white rounded-md"
+                >
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- Modal -->
+      <div
+        id="newAuctionModal"
+        class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
+      >
+        <!-- Modal content -->
+        <div
+          class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+        >
+          <form id="newAuctionForm">
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm font-bold mb-2"
+                for="title"
+                >Title</label
+              >
+              <input
+                required
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="title"
+                type="text"
+                placeholder="Title"
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm font-bold mb-2"
+                for="description"
+                >Description</label
+              >
+              <textarea
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="description"
+                placeholder="Description"
+              ></textarea>
+            </div>
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm font-bold mb-2"
+                for="endsAt"
+                >Ends At</label
+              >
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="endsAt"
+                type="datetime-local"
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm font-bold mb-2"
+                for="tags"
+                >Tags</label
+              >
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="tags"
+                type="text"
+                placeholder="Tags"
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm font-bold mb-2"
+                for="media"
+                >Media URL</label
+              >
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="media"
+                type="url"
+                placeholder="Media URL"
+              />
+            </div>
+            <div class="flex items-center justify-between">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+              >
+                Submit
+              </button>
+              <button
+                class="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded"
+                onclick="closeModal()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const btn = document.querySelector("button.mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  </script>
+  <script src="createListing.js"></script>
+  <script src="allProducts.js"></script>
+</html>
